@@ -28,7 +28,9 @@ samples, guidance on mobile development, and a full API reference.
 # Flutter Auth UI
 
 ![Flutter Auth UI](./UI.png)
-![WELCOME_SCREEN](./WELCOME_SCREEN.png)
+![WELCOME_SCREEN](./welcome.png)
+![WELCOME_SCREEN](./login.png)
+![WELCOME_SCREEN](./signup.png)
 
 # vscode 配置
 
