@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/Screens/Login/components/background.dart';
-import 'package:flutter_auth/Screens/SignUp/signup_screen.dart';
+import 'package:flutter_auth/Screens/Login/components/or_divider.dart';
+import 'package:flutter_auth/Screens/Login/login_screen.dart';
+import 'package:flutter_auth/Screens/SignUp/components/background.dart';
+import 'package:flutter_auth/Screens/SignUp/components/social_icon.dart';
 import 'package:flutter_auth/components/already_have_an_acctount_check.dart';
 import 'package:flutter_auth/components/rounded_button.dart';
 import 'package:flutter_auth/components/rounded_input_filed.dart';
@@ -21,15 +23,13 @@ class Body extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'LOGIN',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+              'SIGNUP',
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: size.height * .03),
             SvgPicture.asset(
-              'assets/icons/login.svg',
-              width: size.height * .35,
+              'assets/icons/signup.svg',
+              height: size.height * .35,
             ),
             SizedBox(height: size.height * .03),
             RoundedFiled(
@@ -40,20 +40,39 @@ class Body extends StatelessWidget {
               onChange: (value) {},
             ),
             RoundedButton(
+              text: 'SIGNUP',
               press: () {},
-              text: 'LOGIN',
             ),
             SizedBox(height: size.height * .03),
             AleadyHaveAnAccountCheck(
+              login: false,
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SignUpScreen(),
+                    builder: (context) => LoginScreen(),
                   ),
                 );
               },
-            )
+            ),
+            OrDivider(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Socalcon(
+                  iconSrc: 'assets/icons/facebook.svg',
+                  press: () {},
+                ),
+                Socalcon(
+                  iconSrc: 'assets/icons/twitter.svg',
+                  press: () {},
+                ),
+                Socalcon(
+                  iconSrc: 'assets/icons/google-plus.svg',
+                  press: () {},
+                ),
+              ],
+            ),
           ],
         ),
       ),
